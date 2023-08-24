@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .container{
+           width: 330px;
+           height: 530px; 
+           border: 2px solid gray;
+           position: relative;
+           left: 15px;
+           top: 50px;
+           border-radius:20px;
+           background-color: black;
+        }
+        #answer{
+            width: 287px;
+            height: 60px;
+            color: white;
+            outline: none;
+            margin-top: 10px;
+            margin-left: 20px;
+            border: none;
+            font-size: 40px;
+            text-align: right;
+            background-color:black;
+        }
+        input::placeholder{
+            color: white;
+        }
+        #btn{
+            width: 55px;
+            height:55px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-top: 32px;
+            border-radius: 100%;
+            border: none;
+            outline: none;
+            background-color: gray;
+        
+        }
+        .btn-0{
+            width: 56px;
+            height: 56px;
+            font-size: 20px;
+            color: white;
+            margin-left: 20px;
+            padding-left:67px;
+            padding-right: 67px;
+            border-radius: 46%;
+            background-color: gray;
+            outline: none;
+            border: none;
+        }
+        .equal-btn{
+            width: 53px;
+            height: 53px;
+            font-size: 20px;
+            color: white;
+            margin-left: 22px;
+            margin-top: 20px; 
+            border-radius: 100%;
+            border: none;
+            outline: none;
+            background-color: orange;
+        }
+        .green-color{
+            color: black;
+        }
+        .white-color{
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    <form name="container" class="container">
+     <input type="text" placeholder="0" id="answer">
+     <input type="button" value="AC" onclick="container.answer.value = '' " id="btn"  class="green-color">
+     <input type="button" value="DE" onclick="back();" id="btn" class="green-color">
+     <input type="button" value="%" onclick="container.answer.value += '%' " id="btn"  class="green-color">
+     <input type="button" value="/" onclick="container.answer.value += '/' " id="btn"  class="green-color">
+
+     <input type="button" value="7" onclick="container.answer.value += '7' " id="btn"  class="white-color">
+     <input type="button" value="8" onclick="container.answer.value += '8' " id="btn"  class="white-color">
+     <input type="button" value="9" onclick="container.answer.value += '9' " id="btn"  class="white-color">
+     <input type="button" value="*" onclick="container.answer.value += '*' " id="btn"  class="green-color">
+
+     <input type="button" value="4" onclick="container.answer.value += '4' " id="btn"  class="white-color">
+     <input type="button" value="5" onclick="container.answer.value += '5' " id="btn"  class="white-color">
+     <input type="button" value="6" onclick="container.answer.value += '6' " id="btn"  class="white-color">
+     <input type="button" value="-" onclick="container.answer.value += '-' " id="btn"  class="green-color">
+
+     <input type="button" value="1" onclick="container.answer.value += '1' " id="btn"  class="white-color">
+     <input type="button" value="2" onclick="container.answer.value += '2' " id="btn"  class="white-color">
+     <input type="button" value="3" onclick="container.answer.value += '3' " id="btn"  class="white-color">
+     <input type="button" value="+" onclick="container.answer.value += '+' " id="btn"  class="green-color">
+
+     <input type="button" value="0" onclick="container.answer.value += '0' "  class="btn-0">
+     
+     <input type="button" value="." onclick="container.answer.value += '.' " id="btn" class="white-color">
+     <input type="button" value="=" onclick="container.answer.value = eval(container.answer.value)"  class="equal-btn">
+    </form>
+
+    <script>
+        var back = function(){
+            var x = document.getElementById("answer").value;
+            document.getElementById("answer").value = x. substring(0,x. length -1);
+        }
+    </script>
+</body>
+</html>
